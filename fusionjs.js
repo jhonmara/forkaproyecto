@@ -3,7 +3,7 @@ const menuHamIcon = document.querySelector('.menu');
 const menuCarritoIcon = document.querySelector('.navbar-shopping-cart');
 const desktopMenu = document.querySelector('.desktop-menu');
 const mobileMenu = document.querySelector('.mobile-menu');
-const product = document.querySelector('.product-detail');
+const aside = document.querySelector('.product-detail');
 const cardsContainer = document.querySelector('.cards-container');
 
 menuEmail.addEventListener('click', toggleDesktopMenu);
@@ -12,18 +12,19 @@ menuCarritoIcon.addEventListener('click', toggleCarritoAside);
 
 
 function toggleDesktopMenu() {
-    const isAsideClosed = product.classList.contains('inactive');
+    const isAsideClosed = aside.classList.contains('inactive');
+    
     if (!isAsideClosed){
-        product.classList.add('inactive');
+        aside.classList.add('inactive');
     }
     desktopMenu.classList.toggle('inactive');
 }
 
 function toggleMobileMenu() {
-   const isAsideClosed = product.classList.contains('inactive');
+   const isAsideClosed = aside.classList.contains('inactive');
   
    if (!isAsideClosed) {
-    product.classList.add('inactive');
+    aside.classList.add('inactive');
    }
    
     mobileMenu.classList.toggle('inactive');
@@ -31,32 +32,34 @@ function toggleMobileMenu() {
 
 function toggleCarritoAside() {
     const isMobileMenuClosed = mobileMenu.classList.contains('inactive');
+ 
     if (!isMobileMenuClosed) {
         mobileMenu.classList.add('inactive');
     }
+ 
     
-    product.classList.toggle('inactive');
+    aside.classList.toggle('inactive');
 }
 
-const producList = [];
-producList.push({
+const productList = [];{
+productList.push({
     name: 'Bike',
     price: 120,
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 });
-producList.push({
+productList.push({
     name: 'Celular',
     price: 170,
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 });
-producList.push({
+productList.push({
     name: 'Computadora',
     price: 250,
     image: 'https://images.pexels.com/photos/276517/pexels-photo-276517.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
 });
+}
 
-
-function renderProducts(arr){  
+function renderProducts(arr){ 
   for (product of arr) {
     const productCard = document.createElement('div');
      productCard.classList.add('product-card');
@@ -94,10 +97,7 @@ function renderProducts(arr){
 
 }
 }
-
-
-
-
+renderProducts(productList);
 
 
 
