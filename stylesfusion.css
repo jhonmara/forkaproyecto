@@ -368,7 +368,7 @@
     }
     @media (max-width: 641px) {
       .mobile-menu{
-        display: 0;
+        display: none;
 
       }
     }
